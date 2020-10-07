@@ -34,10 +34,10 @@ public class ProductoControlador {
         return "nuevoProducto";
     }
 
-    @PostMapping("addProducto")
+    @PostMapping("/addProducto")
     public String addProducto(@ModelAttribute("productoForm") Producto p, Model model){
         ps.save(p);
-        return "redirect:/index";
+        return "redirect:/";
     }
 
 

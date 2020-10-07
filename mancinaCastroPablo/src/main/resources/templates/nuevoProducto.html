@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" th:action="@{/addProducto}" th:object="${productoForm}" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" id="id" />
+        <label>Nombre</label>
+        <input type="text" th:field="*{nombre}" id="nombre"/>
+        <label>Unidades</label>
+        <input type="number" th:field="*{unidades}" id="unidades"/>
+        <label>Observacion</label>
+        <input type="text" th:field="*{observacion}" id="observacion"/>
+        <button type="submit" id="botonEnvio">Enviar</button>
+    </form>
+
+</body>
+</html>

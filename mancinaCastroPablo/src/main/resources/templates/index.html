@@ -7,17 +7,18 @@
 <body>
     <table>
         <tr>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Nombre</th>
+            <th>Unidades</th>
+            <th>Observacion</th>
         </tr>
         <tr th:each=" producto : ${listaProductos}">
             <td th:text="${producto.nombre}"></td>
             <td th:text="${producto.unidades}"></td>
-            <td th:text="${producto.descripcion}"></td>
+            <td th:text="${producto.observacion}"></td>
         </tr>
 
     </table>
+    <a th:href="@{/formularioProducto}"	 id="add">Añadir Producto</a>
 
 </body>
 </html>

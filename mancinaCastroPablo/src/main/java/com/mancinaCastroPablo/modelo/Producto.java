@@ -21,5 +21,5 @@ public class Producto {
 
     private String nombre;
     private int unidades;
-    private String descripcion;
+    private String observacion;
 }
