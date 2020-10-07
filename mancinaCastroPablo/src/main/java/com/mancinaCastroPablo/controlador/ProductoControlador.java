@@ -6,10 +6,9 @@ import com.mancinaCastroPablo.servicio.ProductoServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -39,6 +38,34 @@ public class ProductoControlador {
         ps.save(p);
         return "redirect:/";
     }
+
+    //PARA EDITAR
+
+    @GetMapping("/producto/editar/{id}")
+    public String editarProducto(@PathVariable("id") Long id, Model model){
+        Optional<Producto> p= ps.findById(id);
+        if(p != null){
+            model.addAttribute("productoForm",p);
+            return "nuevoProducto";
+        } else{
+            return "redirect:/";
+        }
+    }
+
+
+
+    //PARA BORRAR
+
+    /*
+    @GetMapping("/producto/borrar/{id}")
+    public String borrarProducto(@PathVariable("id") Long id, Model model){
+        Producto p= ps.findById(id);
+        if(p != null){
+            ps.delete(p);
+        }
+            return "redirect:/";
+
+    }*/
 
 
 }
