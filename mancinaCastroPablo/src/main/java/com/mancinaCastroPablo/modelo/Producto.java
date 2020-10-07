@@ -20,7 +20,6 @@ public class Producto {
     private long Id;
 
     private String nombre;
-    private double precio;
     private int unidades;
     private String descripcion;
 }
